@@ -1,0 +1,18 @@
+#!/bin/bash -e
+set -x
+
+# Running upgrades
+yum update -y
+
+# Install docker
+amazon-linux-extras install docker -y
+service docker start
+usermod -a -G docker ec2-user
+systemctl enable docker
+
+# Run CPM docker
+docker run \
+    -v /tmp:/tmp:rw \
+    -v /var/run/docker.sock:/var/run/docker.sock:rw \
+    -e MINION_PRIVATE_LOCATION_KEY=${cpm_private_location_key} \
+    ${cpm_container}
