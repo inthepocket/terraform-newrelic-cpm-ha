@@ -1,4 +1,4 @@
-# Terraform newrelic CPM Module
+# Terraform newrelic cpm module
 
 A Terraform module which creates high available containerized private minion's in AWS.
 
