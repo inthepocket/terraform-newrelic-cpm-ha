@@ -1,6 +1,14 @@
 # Terraform newrelic CPM Module
 
-A Terraform module which creates high available containerized private minion on AWS.
+A Terraform module which creates high available containerized private minion's in AWS.
+
+
+## Why
+
+This module was created for developers who want to run newrelic private minion's inside a AWS VPC without kubernetes.
+It creates EC2 instances that run a docker container which polls for synthetics that are configured inside newrelic and are assigned to a private location.
+The setup is high available as you want to rely on these machines for internal health checks.
+More info: https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/private-locations/install-containerized-private-minions-cpms
 
 ## Usage
 
